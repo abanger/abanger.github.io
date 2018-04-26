@@ -12,7 +12,7 @@ categories: maintenance
 
 环境：centos 7+apache/nginx
 
-本采用[letsencrypt.org](https://letsencrypt.org/getting-started/)推荐[Certbot ACME](https://certbot.eff.org/) 方式获取证书。
+本文采用[letsencrypt.org](https://letsencrypt.org/getting-started/)推荐[Certbot ACME](https://certbot.eff.org/) 方式获取证书。
 
 ### 获取 Certbot
 
