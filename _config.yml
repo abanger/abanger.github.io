@@ -19,8 +19,10 @@ description: >- # this means to ignore newlines until "baseurl:"
     CentOS,PHP,python,记录工作相关资料。
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: abangercn
+##twitter_username: abangercn
 github_username:  abanger
+weibo_username:  abanger
+github_bug: abanger
 
 # Build settings
 markdown: kramdown
