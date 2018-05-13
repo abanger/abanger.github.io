@@ -1,7 +1,7 @@
-# abanger.github.io
+# abanger.github.io  
 abanger's blog
 
-## 关于本站：记录工作相关资料。
+## 关于本站：记录一些兴趣资料。
 
 主要关注Linux、数据处理，编程主要用PHP，正学习Python。
 
