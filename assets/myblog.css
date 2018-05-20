@@ -1,6 +1,14 @@
+/*
+** author:abanger#qq.com
+** 20180520
+** header: background-color: #09c;   color: white;
+** footer background: #c7d1d6;
+
+*/
+
 body{font-size:20px;color:#212529}
 
-header.masthead .overlay{position:absolute;top:0;left:0;height:28%;width:100%;background-color:#212529;opacity:0.5}
+header.masthead .overlay{position:absolute;top:0;left:0;height:28%;width:100%;background-color:#09c;opacity:0.5}
 
 header.masthead .page-heading,header.masthead .post-heading,header.masthead .site-heading{padding:80px 0 30px;}
 @media only screen and (min-width: 768px){
@@ -51,4 +59,9 @@ footer .copyright{font-size:14px;margin-bottom:0;text-align:center}
     right: 30px;  
     border:0px;
     color: #ff922b;
-}  
+} 
+
+
+footer{
+    background: #c7d1d6;
+}
