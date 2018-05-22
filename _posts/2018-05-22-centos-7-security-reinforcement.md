@@ -7,7 +7,6 @@ categories: maintenance
 
 Centos 7 安全加固
 
-
 ## 1. 系统安装
 最小化安装，安装之后马上更新。
 ```
@@ -34,10 +33,20 @@ userdel shutdown
 userdel halt
 userdel games
 ```
-### 添加口令策略  
-加强口令的复杂度等，降低被猜解的可能性。使用命令“cat /etc/login.defs|grep PASS”和“cat /etc/pam.d/system-auth”查看密码策略设置。  
-系统口令策略：修改/etc/login.defs文件将PASS_MIN_LEN最小密码长度设置为12位。
+### 添加密码策略  
+加强密码的复杂度等，降低被猜解的可能性。查看"/etc/login.defs"和“/etc/pam.d/system-auth”查看密码策略设置。
+```
+##如设置用户test密码过期的天数为60天
+chage -M 60 test
 
+```
+系统范围密码质量限制的配置详见/etc/security/pwquality.conf配置。
+```
+#如设置最小密码长度：minlen=8
+authconfig --passminlen=8 --update
+```
+
+https://blog.csdn.net/wh211212/article/details/53992772
 
 
 ### 检查特殊账号
@@ -71,6 +80,7 @@ TMOUT=600
 ```
 使用命令“vi /etc/profile”修改配置文件，添加“TMOUT=”行开头的注释，设置为“TMOUT=600”，即超时时间为10分钟
 
+
 ### 设置Bash保留历史命令的条数  
 修改HISTSIZE=5,即只保留最新执行的5条命令
 ```
@@ -79,7 +89,7 @@ vi /etc/profile
 
 ## 4 调整和关闭非必须的服务
 
-### 关闭Mail  Server 
+### 关闭Mail   Server 
 ```
 systemctl disable postfix
 ```
@@ -111,7 +121,7 @@ firewall-cmd --reload
 ```
 
 
-## 5 核心与网络参数调整
+## 5 系统和网络参数调整
 禁止core   dump:
 ```
 vi /etc/security/limits.conf
@@ -121,9 +131,19 @@ vi /etc/security/limits.conf
 * hard core 0
 
 ```
-待续
+给系文件加锁,防止未经许可的删除或添加  
+```
+chattr +ia /etc/passwd
+chattr +ia /etc/shadow
+chattr +ia /etc/group
+chattr +ia /etc/gshadow
+chattr +ia /etc/services 
+```
+注意：执行上述权限修改后，就无法添加和删除用户。  
 
-## 6 日记
+
+
+## 6 日记调整
 修改rsyslogd日志，rotate>25，日记记录超180天。
 ```
 /etc/logrotate.conf 
