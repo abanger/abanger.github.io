@@ -46,7 +46,6 @@ chage -M 60 test
 authconfig --passminlen=8 --update
 ```
 
-https://blog.csdn.net/wh211212/article/details/53992772
 
 
 ### 检查特殊账号
@@ -154,3 +153,6 @@ rotate 30
 
 ## 修订  
 第一版本：2018-05-22 11:37:02
+
+##参考  
+- [CentOS 7 设置密码规则](https://blog.csdn.net/wh211212/article/details/53992772)  
