@@ -5,7 +5,7 @@ date:   2018-05-22 11:37:02 +0800
 categories: maintenance
 ---
 
-# Centos 7 安全加固  
+Centos 7 安全加固  
 
 ## 1. 系统安装
 最小化安装，安装之后马上更新。
