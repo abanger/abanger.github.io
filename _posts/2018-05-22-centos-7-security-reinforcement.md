@@ -8,7 +8,7 @@ categories: maintenance
 Centos 7 安全加固  
 
 ## 1. 系统安装
-最小化安装，安装之后马上更新。
+最小化安装，留足磁盘空间存放日记， 配置内部yum源，安装之后马上更新。
 ```
 yum update -y
 ```
@@ -154,12 +154,12 @@ server time.edu.cn iburst  ##根据实际配置
 # rotate 30
 ```
 
-
-
 ## 修订  
 - 2018-05-22 11:37:02
 - 2018-05-25 16:31:02
-### 待续
+- 2018-05-28 16:55:00
+- 待续
           
 ## 参考  
 - [CentOS 7 设置密码规则](https://blog.csdn.net/wh211212/article/details/53992772)  
+
