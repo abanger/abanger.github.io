@@ -67,7 +67,10 @@ Header always append X-Frame-Options DENY
 ServerTokens prod 
 #关闭apahce版本信息
 ServerSignature Off 
-
+#服务器断开与客户机的连接的超时间隔
+Timeout 60
+#一次连接可以进行的HTTP请求的最大请求次数
+MaxKeepAliveRequests 100
 ```
 
 ### 错误提示页面
@@ -135,6 +138,7 @@ systemctl restart httpd
 
 ## 修订  
 - 2018-06-08 17:07:00
+- 2018-07-03 09:01:00
 - 待续
           
 ## 参考  
