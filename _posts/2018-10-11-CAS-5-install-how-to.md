@@ -108,6 +108,8 @@ keytool -export -trustcacerts -alias tomcat -file server.cer -keystore server.ke
 ### 参考文献  
 1. [CAS Gradle Overlay](https://github.com/apereo/cas-gradle-overlay-template)  
 2. [Apereo CAS](https://github.com/apereo/cas)  
-3. [CAS之5.2x版本单点登录服务安装](https://blog.csdn.net/yelllowcong/article/details/78805420)  
+3. [CAS Enterprise Single Sign-On(文档)](https://apereo.github.io/cas/5.2.x/index.html)  
+4. [WAR Overlay Installation](https://apereo.github.io/cas/5.2.x/installation/Maven-Overlay-Installation.html)  
+5. [CAS之5.2x版本单点登录服务安装](https://blog.csdn.net/yelllowcong/article/details/78805420)  
 
 
