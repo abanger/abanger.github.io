@@ -104,10 +104,10 @@ keytool -export -trustcacerts -alias tomcat -file server.cer -keystore server.ke
 ```
 3. 配置其他安全问题，包括此开源软件隐患，欢迎大家讨论[点击讨论](https://github.com/abanger/abanger.github.io/issues)
 4. Tomcat和openldap安装和管理请先参考其他资料，有空后另文。
-### 参考
 
-[CAS Gradle Overlay](https://github.com/apereo/cas-gradle-overlay-template)
-[Apereo CAS](https://github.com/apereo/cas)
-[CAS之5.2x版本单点登录服务安装](https://blog.csdn.net/yelllowcong/article/details/78805420)
+### 参考文献
+1. [CAS Gradle Overlay](https://github.com/apereo/cas-gradle-overlay-template)  
+2. [Apereo CAS](https://github.com/apereo/cas)  
+3. [CAS之5.2x版本单点登录服务安装](https://blog.csdn.net/yelllowcong/article/details/78805420)  
 
 
