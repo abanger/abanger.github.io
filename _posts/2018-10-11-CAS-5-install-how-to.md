@@ -7,7 +7,7 @@ categories: maintenance
 
 
 
-简要介绍统一认证服务（CAS，Central Authentication Service）5安的装及配置。
+简要介绍统一认证服务（CAS，Central Authentication Service）5.2.X的安装及配置。
 CAS环境：Centos7.5+Tomcat8.5+jdk-8u181。后台用户管理采用openldap，其安装请参考相关资料。
 
 ## 获取 CAS  
