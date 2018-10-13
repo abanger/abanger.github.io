@@ -1,24 +1,24 @@
 ---
 layout: post
-title:  "CAS 5安装"
+title:  "统一认证服务CAS 5安装"
 date:   2018-10-11 13:11:02 +0800
 categories: maintenance
 ---
 
 
 
+简要介绍统一认证服务（CAS，Central Authentication Service）5安的装及配置。
+CAS环境：Centos7.5+Tomcat8.5+jdk-8u181。后台用户管理采用openldap，其安装请参考相关资料。
 
-CAS环境：centos7.5+Tomcat8.5+jdk-8u181。后台用户管理采用openldap，其安装请参考相关资料。
-
-### 获取 CAS  
+## 获取 CAS  
 本次安装采用[gradle overlay](https://github.com/apereo/cas-gradle-overlay-template)项目，减少安装编译过程，速度比较快。需要用源码请到[CAS开源库](https://github.com/apereo/cas)下载。不喜欢使用gradle安装也可使用mvn,请到[CAS WAR Overlay template](https://github.com/apereo/cas-overlay-template)下载，不过最新版本都是采用gradle安装。CAS版本为5.2.4，其他版本安装会缺少依赖，请自行测试。
-
+在安装目录下执行如下命令下载。
 ```
 git clone -b 5.2 https://github.com/apereo/cas-gradle-overlay-template.git
 ```
 当前目录下生成cas-gradle-overlay-template目录，称之为安装目录。
 
-### 安装步骤  
+## 安装步骤  
 
 #### 配置gradle  
 添加所需依赖：json注册服务，REST接口，ldap接口。修改配置文件build.gradle，文件在安装目录cas-gradle-overlay-template/cas/下。dependencies添加三行。
@@ -33,7 +33,9 @@ git clone -b 5.2 https://github.com/apereo/cas-gradle-overlay-template.git
 cd  cas-gradle-overlay-template
 vi cas/build.gradle
 ```
+配置文件主要修改结果如下,其他部分略。
 ```
+...
 dependencies {
     compile "org.apereo.cas:cas-server-webapp-tomcat:${project.'cas.version'}@war"
     if (!project.hasProperty('bootiful')) {
@@ -46,6 +48,7 @@ dependencies {
     compile "org.apereo.cas:cas-server-support-ldap:${project.'cas.version'}"
 
 }
+...
 ```
 
 #### 生成war  
@@ -66,7 +69,7 @@ CAS配置也可以在上一步骤之前先在安装目录（cas-gradle-overlay-t
 ```
 2. 修改个性配置文件
 拷贝在安装目录（cas-gradle-overlay-template）下etc/cas/config/，至操作系统centos根目录/etc/cas/config下。
-修改cas.properties部分内容如下
+修改cas.properties部分内容如下,其他部分可临时使用默认配置。
 
 ```
 #vi /etc/cas/config/cas.properties
@@ -87,25 +90,23 @@ cas.authn.ldap[0].bindDn=cn=adm,dc=edu,dc=cn
 cas.authn.ldap[0].bindCredential=xxx001xxx001 #password,modi it
 
 ```
-一般如上修改简单就可以使用ldap管理用户。记得重启Tomcat服务。
+一般如上简单修改就可以使用ldap管理用户。记得重启Tomcat服务。
 
 
 #### 注册服务  
-应用要接入CAS需要注册，在Tomcat目录/webapps/cas/WEB-INF/classes/services/下增加一json配置文件。可参考HTTPSandIMAPS-10000001.json文件配置。  
+应用要接入CAS需要注册，在Tomcat目录/webapps/cas/WEB-INF/classes/services/下增加一json配置文件。可参考HTTPSandIMAPS-10000001.json文件配置。    
 
-
-
-### 其他  
+## 其他  
 1. edu.cn是一个测试域名，请根据自己的域名自行更改。
-2. 没有生成证书启动日记会报错，不影响使用,用下面两句可生成。
+2. 没有生成证书启动时系统日记会报错，不影响使用,用下面两句可生成。
 ```
 keytool -genkey -alias tomcat -keyalg RSA -keypass tomcat -storepass tomcat -keystore server.keystore -validity 36000
 keytool -export -trustcacerts -alias tomcat -file server.cer -keystore server.keystore -storepass tomcat
 ```
 3. 配置其他安全问题，包括此开源软件隐患，欢迎大家讨论[点击讨论](https://github.com/abanger/abanger.github.io/issues)
-4. Tomcat和openldap安装和管理请先参考其他资料，有空后另文。
+4. Tomcat和openldap安装和管理请先参考其他资料，有空后将另文。
 
-### 参考文献  
+## 参考文章  
 1. [CAS Gradle Overlay](https://github.com/apereo/cas-gradle-overlay-template)  
 2. [Apereo CAS](https://github.com/apereo/cas)  
 3. [CAS Enterprise Single Sign-On(文档)](https://apereo.github.io/cas/5.2.x/index.html)  
