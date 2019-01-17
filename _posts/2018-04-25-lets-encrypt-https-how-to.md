@@ -37,7 +37,7 @@ certbot --apache
 #### 3.开始申请证书
 ```
 # 注xxxlab.cn请根据自己的域名自行更改
-certbot -i nginx -d "*.xxxlab.cn" -d xxxlab.cn --server https://acme-v02.api.letsencrypt.org/directory --manual --preferred-challenges dns certonly
+certbot  -d "*.xxxlab.cn" -d xxxlab.cn --server https://acme-v02.api.letsencrypt.org/directory --manual --preferred-challenges dns certonly
 ```
 申请过程交互如下：
 ```
@@ -164,7 +164,7 @@ SSLCertificateKeyFile /etc/cert/xxxlab.cn/privkey.pem
 ### 使用http认证方式
 上述是使用dns作为认证获取申请通配符证书，早期笔者是使用http认证方式在服务器下配置提示认证信息。命令如下
 ```
-letsencrypt-auto certonly --email abanger@xxxlab.cn  -d login.xxxlab.cn -a manual
+certbot  certonly --email abanger@xxxlab.cn  -d login.xxxlab.cn -a manual
 ```
 邮件abanger@xxxlab.cn用于证书过期提示。
 
@@ -181,3 +181,5 @@ letsencrypt-auto certonly --email abanger@xxxlab.cn  -d login.xxxlab.cn -a manua
 
 [Let's Encrypt 给网站加 HTTPS 完全指南certbot](https://blog.csdn.net/cstopery/article/details/51911298)
 
+## 修订  
+- 2019-01-17 08:07:00 删除命令多余参数（郑先生提醒）
