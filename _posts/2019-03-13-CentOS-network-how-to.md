@@ -7,7 +7,6 @@ categories: maintenance
 
 
 
-# Centos网络配置
 
 ## Centos配置IP方法
 
