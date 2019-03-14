@@ -27,12 +27,12 @@ vi /etc/sysconfig/network-scripts/ifcfg-ens33
 
 ```
 BOOTPROTO=static        #采用静态IP（none、static、dhcp）
-DEVICE=ens192     #网卡设备名
+DEVICE=ens33     #网卡设备名
 ONBOOT=yes       #是否随网络服务启动
 IPADDR0="10.41.10.100"    #IP地址
 PREFIX0="24"           #子网掩码（netmask=255.255.255.0）
-GATEWAY0="10.10.10.251"   #网关
-DNS1="210.34.120.1"         #DNS
+GATEWAY0="10.10.10.1"   #网关
+DNS1="8.8.8.8"         #DNS
 ```
 
 ## 连接到主机
