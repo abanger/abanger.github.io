@@ -80,5 +80,64 @@ yum makecache ##生成缓存
 yum install net-tools
 ```
 
+## 常用yum命令
+
+### 显示所有仓库
+```
+yum repolist all
+```
+
+### 显示应用程序包
+```
+yum list 
+#支持通配符格式的查询
+```
+
+### 显示可更新或已安装的程序包
+```
+yum list updates
+yum list installed
+```
+### 显示仓库中最近增加的程序包
+```
+yum list recent
+```
+### 安装程序包
+```
+#安装net-tools程序
+yum install net-tools
+```
+
+### 卸载程序包
+```
+yum remove net-tools
+#或
+yum erase net-tools
+```
+
+### 搜索
+```
+yum search net-tools
+```
+### 查看指定包所依赖的capabilities
+```
+yum deplist net-tools
+```
+
+
+### 查看yum事务历史
+```
+yum history
+```
+### 包组相关的命令
+```
+yum groupinstall    # 安装包组
+yum groupupdate     #更新包组
+yum grouplist       #显示包组
+yum groupremove     #移除包组
+yum groupinfo       #查看包组信息
+yum groupinstall 'Minimal Install'
+```
+
 ## 修订  
-- 2019-03-27 9:29:00
+- 2019-03-27 15:29:00
