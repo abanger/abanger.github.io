@@ -50,7 +50,7 @@ firewall-cmd --reload
 vi /etc/firewalld/zones/public.xml
 #命令形式
 #firewall-cmd --permanent --zone=public --add-rich-rule="rule family="ipv4" source address="10.40.10.100/24" service name="http" reject"
-##允许为 accept
+##accept为允许，reject拒绝，drop直接丢弃
 ```
 
 查看配置文件
