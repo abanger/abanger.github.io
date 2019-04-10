@@ -79,4 +79,8 @@ vi /etc/firewalld/zones/public.xml
 #firewall-cmd --permanent  --zone=public --remove-rich-rule="rule family="ipv4" source address="192.168.122.0/24" service name="http" reject"
 ```
 
+## 参考 
+- [Firewalld Documentation](https://firewalld.org/documentation/)
 
+## 修订  
+- 2019-04-10 9:41:00
