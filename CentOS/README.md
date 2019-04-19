@@ -1,6 +1,9 @@
 # CentOS 7 目录
 
 
+
+- [CentOS7 vi](CentOS7_vi.md)
+- [CentOS7 etwork how to](CentOS7_network_how_to.md)
 - [CentOS7 firewalld](CentOS7_firewalld.md)
 - [CentOS7 netstat](CentOS7_netstat.md)
 - [CentOS7 telnet](CentOS7_telnet.md)
