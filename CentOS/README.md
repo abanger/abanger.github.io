@@ -9,3 +9,4 @@
 - [CentOS7 telnet](CentOS7_telnet.md)
 - [CentOS7 Apache httpd install](CentOS7_Apache_httpd_install.md)
 - [CentOS7 Apache httpd manage](CentOS7_Apache_httpd_manage.md)
+- [CentOS7 vsftpd install](CentOS7_vsftpd_install.md)
