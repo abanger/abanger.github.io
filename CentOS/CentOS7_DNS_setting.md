@@ -5,20 +5,23 @@ CentOS 7，手工设置 /etc/resolv.conf 里的DNS，重启网络服务，系统
 ## 使用命令行工具nmcli设置
 ```
 #显示当前网络连接
-#nmcli connection show
+nmcli connection show
+```
+
 ```
 NAME           UUID                                  TYPE      DEVICE 
 System ens192  e939fa4c-c08b-4eb5-bdcb-0009b8102468  ethernet  ens192 
 System ens160  111df35c-1397-476d-afbc-b934f5186508  ethernet  --   
+```
 
 ```
 #修改当前网络连接对应的DNS服务器，这里的网络连接可以用名称或者UUID来标识
-nmcli con connection modify "System ens192" ipv4.dns "223.5.5.5 8.8.8.8"
+nmcli  connection modify "System ens192" ipv4.dns "223.5.5.5 8.8.8.8"
 ```
-#将dns配置生效
+### 将dns配置生效
 ```
 nmcli connection up "System ens192"
-nmcli connection modify "System ens192" +ipv4.dns +ipv4.dns 8.8.8.8
+
 #修改配置文件执行生效
 systemctl restart network  #覆盖/etc/resolv.conf
 nmcli connection reload 
