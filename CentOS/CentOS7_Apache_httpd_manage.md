@@ -6,16 +6,16 @@
 
 Apache httpd的配置信息和目录
 
-主配置目录： /etc/httpd/conf
-主配置文件： /etc/httpd/conf/httpd.conf
-子配置目录： /etc/httpd/conf.d
-子配置文件： /etc/httpd/conf.d/*.conf
-默认发布目录 ： /var/www/html
-默认发布文件： index.html
-默认端口：  80
-默认安全上下文： httpd_sys_content_t
-程序开启默认用户： apache
-httpd日志目录 ： /etc/httpd/logs/*
+- 主配置目录： /etc/httpd/conf
+- 主配置文件： /etc/httpd/conf/httpd.conf
+- 子配置目录： /etc/httpd/conf.d
+- 子配置文件： /etc/httpd/conf.d/*.conf
+- 默认发布目录 ： /var/www/html
+- 默认发布文件： index.html
+- 默认端口：  80
+- 默认安全上下文： httpd_sys_content_t
+- 程序开启默认用户： apache
+- httpd日志目录 ： /var/logs/httpd/*
 
 
 
