@@ -17,22 +17,22 @@ systemctl start mariadb && systemctl enable mariadb
 rpm -ivh https://repo.zabbix.com/zabbix/4.0/rhel/7/x86_64/zabbix-release-4.0-1.el7.noarch.rpm
 
 ```
-日志
-```
-[root@v06lab home]# rpm -ivh https://repo.zabbix.com/zabbix/4.0/rhel/7/x86_64/zabbix-release-4.0-1.el7.noarch.rpm
-Retrieving https://repo.zabbix.com/zabbix/4.0/rhel/7/x86_64/zabbix-release-4.0-1.el7.noarch.rpm
-warning: /var/tmp/rpm-tmp.boVuYR: Header V4 RSA/SHA512 Signature, key ID a14fe591: NOKEY
-Preparing...                          ################################# [100%]
-Updating / installing...
-   1:zabbix-release-4.0-1.el7         ################################# [100%]
-```
-yum-config-manager --enable rhel-7-server-optional-rpms
-
 
 ## 开始安装zabbix
+- 安装zabbix
 ```
 yum install zabbix-server-mysql zabbix-web-mysql zabbix-agent
 ```
+- 更新时区  
+系统初始化时候要求时区。
+```
+#编辑/etc/httpd/conf.d/zabbix
+#vi /etc/httpd/conf.d/zabbix.conf
+php_value date.timezone Asia/Shanghai
+#重启httpd
+systemctl restart httpd
+```
+
 ## 创建zabbix数据库
 ### 创建zabbix初始数据库
 ```
@@ -80,10 +80,23 @@ systemctl start zabbix-server zabbix-agent httpd && systemctl enable zabbix-serv
 ## 参考
 - [Download and install Zabbix](https://www.zabbix.com/download?zabbix=4.0&os_distribution=centos&os_version=7&db=mysql)
 - [Red Hat Enterprise Linux/CentOS](https://www.zabbix.com/documentation/4.0/manual/installation/install_from_packages/rhel_centos)
-- 
+
+## 安装过程的日志
+
+### 安装zabbix的yum源的日志
+
+```
+[root@v06lab home]# rpm -ivh https://repo.zabbix.com/zabbix/4.0/rhel/7/x86_64/zabbix-release-4.0-1.el7.noarch.rpm
+Retrieving https://repo.zabbix.com/zabbix/4.0/rhel/7/x86_64/zabbix-release-4.0-1.el7.noarch.rpm
+warning: /var/tmp/rpm-tmp.boVuYR: Header V4 RSA/SHA512 Signature, key ID a14fe591: NOKEY
+Preparing...                          ################################# [100%]
+Updating / installing...
+   1:zabbix-release-4.0-1.el7         ################################# [100%]
+```
 
 
 ### 数据库安装日志
+
 ```
 # yum -y install mariadb-server mariadb
 Loaded plugins: fastestmirror
