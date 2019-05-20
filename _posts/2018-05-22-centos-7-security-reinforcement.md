@@ -124,7 +124,7 @@ firewall-cmd --reload
 * hard core 0
 
 ```
-### 系文件加锁  
+### 系统文件加锁  
 防止未经许可的删除或添加，注意：执行权限修改后，就无法添加和删除用户。
 ```
 chattr +ia /etc/passwd
