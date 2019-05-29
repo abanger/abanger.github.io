@@ -22,10 +22,10 @@ card 1: CameraB409241 [USB Camera-B4.09.24.1], device 0: USB Audio [USB Audio]
 ```
 - 调整系统配置文件
 编辑声音处理的配置文件asound.conf。
+
 ```
 ##/etc/asound.conf
-
-# use samplerate to resample as speexdsp resample is bad
+#use samplerate to resample as speexdsp resample is bad
 defaults.pcm.rate_converter "samplerate"
 
 pcm.!default {
@@ -48,6 +48,7 @@ pcm.dmixed {
     type dmix
     slave.pcm "hw:1,0"
 }
+
 ```
 
 
