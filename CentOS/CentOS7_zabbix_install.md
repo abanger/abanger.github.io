@@ -77,6 +77,44 @@ systemctl start zabbix-server zabbix-agent httpd && systemctl enable zabbix-serv
 
 
 
+
+
+
+## 安装配置zabbix-agent
+防火墙设置，允许zabbix-agent的10050端口通过
+```
+firewall-cmd --permanent --add-port=10050/tcp
+firewall-cmd --reload
+```
+非本机的zabbix客户端，让服务器端能访问到客户的信息。修改三行信息，本地为127.0.0.1，其他设备为10.4.10.10。
+```
+# rpm安装zabbix的yum源
+rpm -ivh https://repo.zabbix.com/zabbix/4.0/rhel/7/x86_64/zabbix-release-4.0-1.el7.noarch.rpm
+#安装zabbix-agent
+yum install zabbix-agent
+#配置zabbix-agent
+#vi /etc/zabbix/zabbix_agentd.conf
+Server=127.0.0.1  #10.4.10.10  #Server端的IP地址
+ServerActive=127.0.0.1  #10.4.10.10,zabbix server 默认端口10051
+Hostname=127.0.0.1  #本机的名字
+```
+
+![](img/zabbix_agent201905-01.png)
+![](img/zabbix_agent201905-02.png)
+![](img/zabbix_agent201905-03.png)
+
+
+
+
+
+
+
+
+
+
+
+
+
 ## 参考
 - [Download and install Zabbix](https://www.zabbix.com/download?zabbix=4.0&os_distribution=centos&os_version=7&db=mysql)
 - [Red Hat Enterprise Linux/CentOS](https://www.zabbix.com/documentation/4.0/manual/installation/install_from_packages/rhel_centos)
