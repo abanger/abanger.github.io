@@ -124,6 +124,20 @@ LoadModule proxy_http_module modules/mod_proxy_http.so
 ```
 
 
+### 限制IP地址直接访问
+```
+<VirtualHost *:80>
+        ServerName 10.*.*.*  ##目标IP
+        <Location />
+                Order allow,deny
+                Deny from all
+        </Location>
+        #<Directory />
+        #       Require all denied
+        #</Directory>
+</VirtualHost>
+
+```
 
 
 
@@ -139,6 +153,7 @@ systemctl restart httpd
 ## 修订  
 - 2018-06-08 17:07:00
 - 2018-07-03 09:01:00
+- 2019-06-03 17:01:00
 - 待续
           
 ## 参考  
