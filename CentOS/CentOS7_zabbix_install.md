@@ -112,10 +112,12 @@ Hostname=127.0.0.1  #本机的名字
 
 
 
-
-
-
 ## 注意事项
+
+- 配置selinux
+```
+setsebool -P httpd_can_connect_zabbix=1
+```
 - 关闭selinux
 ```
 setenforce 0  #临时
