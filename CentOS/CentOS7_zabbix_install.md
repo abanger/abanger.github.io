@@ -61,6 +61,11 @@ DBPassword=zabbix
 systemctl start zabbix-server zabbix-agent httpd && systemctl enable zabbix-server zabbix-agent httpd
 
 ```
+- 开启防火墙端口
+firewall-cmd --permanent --add-port=80/tcp
+firewall-cmd --reload
+
+
 
 浏览器打开http://10.41.10.110/zabbix
 安装初始化。
@@ -110,10 +115,13 @@ Hostname=127.0.0.1  #本机的名字
 
 
 
-
-
-
-
+## 注意事项
+- 关闭selinux
+```
+setenforce 0  #临时
+#sed -i 's/SELINUX=enforcing/SELINUX=disabled/' /etc/selinux/config  ##永久关闭
+#setsebool -P httpd_can_connect_zabbix=1
+```
 
 ## 参考
 - [Download and install Zabbix](https://www.zabbix.com/download?zabbix=4.0&os_distribution=centos&os_version=7&db=mysql)
