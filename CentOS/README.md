@@ -2,7 +2,9 @@
 
 
 
+
 - [CentOS7 vi](CentOS7_vi.md)
+- [CentOS7 目录和文件的属性和权限](CentOS7_file_attribute_permission.md)
 - [CentOS7 network how to](CentOS7_network_how_to.md)
 - [CentOS7 DNS setting](CentOS7_DNS_setting.md)
 - [CentOS7 firewalld](CentOS7_firewalld.md)
