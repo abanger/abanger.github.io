@@ -2,7 +2,7 @@
 layout: post
 title:  "防控疫情中网上教学的建议"
 date:   2020-02-11  08:08:00 +0800
-categories:  教学
+categories:  teaching
 ---
 
 
