@@ -7,9 +7,9 @@ categories:  CentOSbook
 
 ## CentOS 项目将重点转移到 CentOS Stream
 
-相关报道
+相关报道  
 - [CentOS Project shifts focus to CentOS Stream](https://blog.centos.org/2020/12/future-is-centos-stream/)
-- [CentOS 8 落幕，“免费”的 RHEL 没了 | Linux 中国](https://zhuanlan.zhihu.com/p/335056255)
+- [CentOS 8 落幕，“免费”的 RHEL 没了](https://zhuanlan.zhihu.com/p/335056255 )
 
 
 
