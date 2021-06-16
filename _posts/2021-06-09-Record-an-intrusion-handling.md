@@ -9,7 +9,7 @@ categories:  linux
 
 网友说某云机器负载异常，CPU占用高，如下图所示，从提供图片，木马选择时段活动。
 
-![](/img/incident0102.png)
+![](assets/img/incident0102.png)
 
 
 
@@ -29,7 +29,7 @@ categories:  linux
 
 详见下图，可以看出joseph进程占用系统资源。
 
-![](/img/incident0103.png)
+![](assets/img/incident0103.png)
 
 观察一会儿也还会出现进程tdgfdz。
 
@@ -38,14 +38,14 @@ categories:  linux
 ```
 
 
-### 进一步分析
+### 进一步分析  
 
 - 查看进程joseph开打的文件,如下图所示。
 
-![](/img/incident0104.png)
+![](assets/img/incident0104.png)
 
 
-- 查看进程tdgfdz开打的文件
+- 查看进程tdgfdz开打的文件  
 
 ```
 root@xxxx:~/bak# lsof -c tdgfdz
@@ -77,7 +77,7 @@ tdgfdz  1707 root   20u     IPv4 897980      0t0     TCP x.x.x.2:49836->x.x.4.43
 tdgfdz  1707 root   21u     IPv4 929868      0t0     TCP x.x.x.2:57342->x.x.220.230:43581 (ESTABLISHED)
 ```
 
-- 查看进程tdgfdz建立网络
+- 查看进程tdgfdz建立网络  
 
 ```
 root@xxx:/var/log# netstat -anp |grep tdgfdz
@@ -108,7 +108,9 @@ tcp        0      0 172.17.9.2:34918        x.x.176.5:57782     ESTABLISHED 1707
 
 ## 清除过程
 
-主要思路是删除相关文件，杀死进程，用一个文件/root/bak/tt覆盖进程文件，并把些文件权限改为无法写入。操作代码如下，操作后正常。
+主要思路是删除相关文件，杀死进程，用一个文件/root/bak/tt覆盖进程文件，并把些文件权限改为无法写入。操作代码如下，操作后正常。  
+
+
 
 ```
 rm -rf /usr/bin/tdgfdz /usr/bin/osama /var/lib/.qsgm/.local  /tmp/joseph
