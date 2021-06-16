@@ -9,7 +9,7 @@ categories:  linux
 
 网友说某云机器负载异常，CPU占用高，如下图所示，从提供图片，木马选择时段活动。
 
-![](img/incident0102.png)
+![](/img/incident0102.png)
 
 
 
@@ -28,7 +28,7 @@ categories:  linux
 - 性能分析工具top
 
 详见下图，可以看出joseph进程占用系统资源。
-![](img/incident0103.png)
+![](/img/incident0103.png)
 
 观察一会儿也还会出现进程tdgfdz。
 ```
@@ -40,7 +40,7 @@ categories:  linux
 
 - 查看进程joseph开打的文件,如下图所示。
 
-![](img/incident0104.png)
+![](/img/incident0104.png)
 
 
 - 查看进程tdgfdz开打的文件
