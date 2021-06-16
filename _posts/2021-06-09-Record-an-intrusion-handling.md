@@ -19,18 +19,20 @@ categories:  linux
 
 - 查系统时间：date
 
-...略
+    ...略
 
 - 查操作系统：uname -a
 
-...略
+    ...略
 
 - 性能分析工具top
 
 详见下图，可以看出joseph进程占用系统资源。
+
 ![](/img/incident0103.png)
 
 观察一会儿也还会出现进程tdgfdz。
+
 ```
  1707 root      20   0  711776  31876     60 S  1.0  3.1   6:43.95 tdgfdz
 ```
@@ -44,6 +46,7 @@ categories:  linux
 
 
 - 查看进程tdgfdz开打的文件
+
 ```
 root@xxxx:~/bak# lsof -c tdgfdz
 COMMAND  PID USER   FD      TYPE DEVICE SIZE/OFF    NODE NAME
@@ -72,10 +75,10 @@ tdgfdz  1707 root   17u     IPv4 892136      0t0     TCP x.x.x.2:44866->x.x.40.8
 tdgfdz  1707 root   18u     IPv4 654190      0t0     TCP x.x.x.2:60570->x.x.11.243:46763 (ESTABLISHED)
 tdgfdz  1707 root   20u     IPv4 897980      0t0     TCP x.x.x.2:49836->x.x.4.43:34631 (ESTABLISHED)
 tdgfdz  1707 root   21u     IPv4 929868      0t0     TCP x.x.x.2:57342->x.x.220.230:43581 (ESTABLISHED)
-
 ```
 
 - 查看进程tdgfdz建立网络
+
 ```
 root@xxx:/var/log# netstat -anp |grep tdgfdz
 tcp        0      0 0.0.0.0:39050           0.0.0.0:*               LISTEN      1707/tdgfdz
@@ -120,8 +123,6 @@ chmod 000  /tmp/joseph
 
 cp /root/bak/tt /usr/bin/joseph
 chmod 000  /usr/bin/joseph
-
-
 ```
 
 
