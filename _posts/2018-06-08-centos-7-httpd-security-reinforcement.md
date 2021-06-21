@@ -1,11 +1,11 @@
 ---
 layout: post
-title:  "cenots 7  httpd 安装及安全加固"
+title:  "CentOS 7  httpd 安装及安全加固"
 date:   2018-06-08 17:07:00 +0800
 categories: maintenance
 ---
 
-cenots 7  httpd 安装及安全加固  
+CentOS 7  httpd 安装及安全加固  
 
 环境为CentOS Linux release 7.5.1804 (Core)。  主要目的作为代理服务器，其他目的请参考调整。
 ## httpd安装及其环境配置

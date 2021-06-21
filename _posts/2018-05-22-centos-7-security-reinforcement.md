@@ -1,11 +1,11 @@
 ---
 layout: post
-title:  "Centos 7 安全加固"
+title:  "CentOS 7 安全加固"
 date:   2018-05-22 11:37:02 +0800
 categories: maintenance
 ---
 
-Centos 7 安全加固  
+CentOS 7 安全加固  
 
 ## 1. 系统安装
 最小化安装，留足磁盘空间存放日记， 配置内部yum源，安装之后马上更新。
