@@ -162,5 +162,5 @@ server time.edu.cn iburst  ##根据实际配置
 - 15:00 2021/12/14
           
 ## 参考  
-- [CentOS 7  httpd 安装及安全加固](2018-06-08-centos-7-httpd-security-reinforcement.md)  
+- [CentOS 7  httpd 安装及安全加固](https://abanger.github.io/maintenance/centos-7-security-reinforcement/)  
 
