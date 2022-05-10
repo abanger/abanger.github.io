@@ -17,16 +17,22 @@ categories:  CentOSbook
 
 可切换到如下系统：
 
+### 华为
+- [openEuler](https://repo.openeuler.org/)
+
+### 阿里
+- [龙蜥 AnolisOS](https://openanolis.cn/download)
+
 ### TencentOS Server
 - [https://mirrors.tencent.com/tlinux/](https://mirrors.tencent.com/tlinux/)
+
+
+### rockylinux项目
+- [https://rockylinux.org](https://rockylinux.org)
 
 ### Oracle Linux
 - [https://linux.oracle.com/switch/centos/](https://linux.oracle.com/switch/centos/)
 - [https://yum.oracle.com/](https://yum.oracle.com/)
-
-### rockylinux项目
-- [https://rockylinux.org](https://rockylinux.org)
-- 建设中
 
 ### Open-sourced & Community-Driven RHEL Fork by CloudLinux
 - [Open-sourced & Community-Driven RHEL Fork by CloudLinux](https://blog.cloudlinux.com/announcing-open-sourced-community-driven-rhel-fork-by-cloudlinux)
@@ -43,3 +49,6 @@ categories:  CentOSbook
 ## 其他相关CentOS 6 生命周期结束
 - CentOS 6 已于2020年11月30日停止更新
 - CentOS 6.10 的目录被迁移[http://vault.centos.org/centos/6.10/](http://vault.centos.org/centos/6.10/)
+
+## 修订  
+- 2022-05-10 14:34 
