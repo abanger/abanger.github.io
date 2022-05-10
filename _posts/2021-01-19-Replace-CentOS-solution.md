@@ -18,14 +18,12 @@ categories:  CentOSbook
 可切换到如下系统：
 
 ### 华为
-- [openEuler](https://repo.openeuler.org/)
+- [openEuler](https://www.openeuler.org/)
+- https://repo.openeuler.org/
 
 ### 阿里
-- [龙蜥 AnolisOS](https://openanolis.cn/download)
-
-### TencentOS Server
-- [https://mirrors.tencent.com/tlinux/](https://mirrors.tencent.com/tlinux/)
-
+- [龙蜥 AnolisOS](https://openanolis.cn)
+- https://openanolis.cn/download
 
 ### rockylinux项目
 - [https://rockylinux.org](https://rockylinux.org)
